@@ -28,14 +28,73 @@ const GameButton = (props) => {
 };
 
 const GameScreen = (props) => {
+  const [UserInpt, setUserInput] = React.useState("");
+  const enterNum = (x) => {
+    console.log("Here"),
+      setUserInput(UserInpt + x);
+  }
   return (
-    <View>
-      <Text>
-        This is Some Text From the Game Screen
+    <View style={{ borderWidth: 1, borderColor: 'red' }}>
+      <Text style={{ alignSelf: 'center', width: '100%' }}>
+        {UserInpt}
       </Text>
-      <GameButton text="Done" setGamestate={props.setGamestate}/>
-    </View>)
+      <NumPad enterNum={enterNum} />
+      <GameButton text="Done" setGamestate={props.setGamestate} />
+    </View>
+  )
 }
+const NumPad = (props) => {
+  return (
+    <View style={GameScreenStyles.NumPadContainer}>
+      <View style={GameScreenStyles.Row}>
+        <NumPadButton text="1" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="2" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="3" enterNum={props.enterNum}></NumPadButton>
+      </View>
+      <View style={GameScreenStyles.Row}>
+        <NumPadButton text="4" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="5" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="6" enterNum={props.enterNum}></NumPadButton>
+      </View>
+      <View style={GameScreenStyles.Row}>
+        <NumPadButton text="7" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="8" enterNum={props.enterNum}></NumPadButton>
+        <NumPadButton text="9" enterNum={props.enterNum}></NumPadButton>
+      </View>
+    </View>
+  )
+}
+const NumPadButton = (props) => {
+  return (
+    <TouchableOpacity activeOpacity={0.6} style={GameScreenStyles.NUMS}
+      onPress={() => {
+        console.log(props.text),
+          props.enterNum(props.text)
+      }}>
+      <Text style={GameScreenStyles.ButtonText}>{props.text}</Text>
+    </TouchableOpacity>
+  )
+}
+const GameScreenStyles = StyleSheet.create({
+  NumPadContainer: {
+    alignItems: "center",
+  },
+  NUMS: {
+    borderWidth: 2,
+    width: 100,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 1,
+  },
+  ButtonText: {
+    fontSize: 32,
+  },
+  Row: {
+    flexDirection: "row",
+  },
+})
+
 const MainMenu = (props) => {
   return (
     <View>
@@ -45,7 +104,7 @@ const MainMenu = (props) => {
           Guess The NUMBER
         </Text>
       </Text>
-      <GameButton text="Play Game" setGamestate={props.setGamestate}/>
+      <GameButton text="Play Game" setGamestate={props.setGamestate} />
     </View>)
 }
 
@@ -87,7 +146,6 @@ const MenuStyles = StyleSheet.create({
     borderRadius: 40,
     padding: 10,
     alignItems: "center",
-    marginTop: "50%",
   },
   touchButtonstext: {
     fontSize: 32,
