@@ -37,7 +37,7 @@ export const GameScreen = (props) => {
                 {UserInpt}
             </Text>
             <NumPad enterNum={enterNum} />
-            <GuessButton Number={Number} UserInpt={UserInpt} setUserInput={setUserInput} text="Guess" changeEndScreen={props.changeEndScreen} setMenuState={props.setMenuState} />
+            <GuessButton setTries={setTries} Tries={Tries} Number={Number} UserInpt={UserInpt} setUserInput={setUserInput} text="Guess" changeEndScreen={props.changeEndScreen} setMenuState={props.setMenuState} />
         </View>
     )
 }
@@ -57,6 +57,11 @@ const GuessButton = (props) => {
                     else {
                         ToastAndroid.show("Wrong Guess", ToastAndroid.SHORT);
                         props.setUserInput("");
+                        props.setTries(props.Tries-1);
+                    }
+                    if(props.Tries==0){
+                        console.log("here")
+                        props.changeEndScreen(true)
                     }
                 }}
                 activeOpacity={0.5}
