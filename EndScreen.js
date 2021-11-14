@@ -7,17 +7,17 @@ export const EndScreen = (props) => {
     <View style={EndScreenStyles.container}>
       <View style={EndScreenStyles.resultContainer}>
         <View style={EndScreenStyles.resultHeading}>
-          <Text>score</Text>
+          <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>score</Text>
           <Text style={EndScreenStyles.resultContent}>{props.Score}</Text>
         </View>
 
         <View style={EndScreenStyles.resultHeading}>
-          <Text>rounds played</Text>
+          <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>rounds played</Text>
           <Text style={EndScreenStyles.resultContent}>{props.Round}</Text>
         </View>
         <View style={EndScreenStyles.resultHeading}>
-          <Text>Negative Score From Hints</Text>
-          <Text style={EndScreenStyles.resultContent}>{props.Hints * -2}</Text>
+          <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>Negative Score From Hints</Text>
+          <Text style={EndScreenStyles.resultContent}>{props.TotalHints * -2}</Text>
         </View>
       </View>
       <TouchableOpacity
@@ -38,6 +38,7 @@ export const EndScreen = (props) => {
           props.setRound(1);
           props.setScore(0);
           props.takeHint(0);
+          props.setTotalHint(0);
         }}
         activeOpacity={0.5}
         style={EndScreenStyles.touchButton("crimson")}

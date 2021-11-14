@@ -9,8 +9,6 @@ export const AppStyles = StyleSheet.create({
   image: {
     flex: 1,
     justifyContent: "center",
-    borderWidth: 2,
-    borderColor: "blue",
   },
   BoardContainer: {
     alignItems: "center",
@@ -37,25 +35,51 @@ export const MenuStyles = StyleSheet.create({
     fontFamily: "sans-serif-light",
   },
 });
-export const GameScreenStyles = StyleSheet.create({});
+export const GameScreenStyles = StyleSheet.create({
+
+  GameContainer: { flex: 1, width: '100%', alignItems: 'center', justifyContent: 'center' },
+  GameStats: {
+    alignSelf: "flex-end", textAlign: 'center', width: "100%", color: 'white', textShadowColor: "red",
+    textShadowRadius: 10,
+    fontSize: 24, fontWeight: 'bold', borderWidth: .9, borderColor: 'white', borderRadius: 50
+  },
+  UserInput: { borderWidth: 3, borderColor: 'white', borderRadius: 50, width: '100%', fontSize: 64, elevation: 5, textAlign: 'center', color: 'white' },
+  ButtonsContainer: {
+    width: "100%",
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingHorizontal: "3%",
+    marginBottom: '5%',
+    marginTop: '5%',
+  }
+  , button: (bg) => {
+    return {
+      backgroundColor: bg,
+      borderRadius: 50,
+      padding: 10,
+      width: "30%",
+      alignItems: "center",
+    }
+  }
+});
 export const EndScreenStyles = StyleSheet.create({
   container: {
-    borderWidth: 10,
     flex: 1,
     width: "100%",
-    borderColor: "red",
     alignItems: "center",
     justifyContent: "center",
   },
   resultContainer: {
-    width: "100%",
+    width: "80%",
     height: "50%",
     justifyContent: "center",
+    elevation: 5,
+    marginBottom: '15%'
   },
   resultHeading: { alignItems: "center", width: "100%" },
   resultContent: {
-    fontSize: 48,
-    color: "black",
+    fontSize: 64,
+    color: "white",
   },
   touchButton: (bg) => {
     return {
@@ -80,6 +104,7 @@ export const NumpadStyles = StyleSheet.create({
     width: 350,
     height: 350,
     borderRadius: 250,
+    borderColor: 'white',
     alignItems: "center",
     borderWidth: 2,
   },
@@ -92,16 +117,18 @@ export const NumpadStyles = StyleSheet.create({
     return {
       marginLeft: mL,
       marginRight: mR,
-      width: 60,
-      height: 60,
-      borderRadius: 30,
+      width: 70,
+      height: 70,
+      borderRadius: 40,
+      borderColor: 'white',
       justifyContent: "center",
       alignItems: "center",
       borderWidth: 1,
     };
   },
   ButtonText: {
-    fontSize: 32,
+    fontSize: 48,
+    color: 'white',
   },
 });
 export const modalStyles = StyleSheet.create({

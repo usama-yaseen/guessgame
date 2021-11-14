@@ -12,7 +12,6 @@ const AppButton = (props) => {
     <View >
       <TouchableOpacity
         onPress={() => {
-          ToastAndroid.show("Touchedddd ", ToastAndroid.SHORT);
           props.setMenuState(false);
         }}
         activeOpacity={0.5}

@@ -17,12 +17,18 @@ export default function App() {
       setScore(Score - 2);
     }
   };
-  const [Hints,takeHint]=React.useState(0);
+  const [Hints, takeHint] = React.useState(0);
+  const [TotalHints, setTotalHint] = React.useState(0);
   const [Round, setRound] = React.useState(1);
 
   return (
     <View style={AppStyles.container}>
-      <ImageBackground resizeMode="contain" style={AppStyles.image}>
+      <ImageBackground
+        resizeMode="cover"
+        source={require("./assets/BG.jpg")}
+        // source={require("./assets/icon.png")}
+        style={AppStyles.image}
+      >
         {!Menu && !End && (
           <GameScreen
             addScore={addScore}
@@ -32,6 +38,8 @@ export default function App() {
             takeHint={takeHint}
             changeEndScreen={changeEndScreen}
             setMenuState={ChangeScreen}
+            setTotalHint={setTotalHint}
+            TotalHints={TotalHints}
           />
         )}
 
@@ -47,6 +55,8 @@ export default function App() {
             setScore={setScore}
             Round={Round}
             setRound={setRound}
+            setTotalHint={setTotalHint}
+            TotalHints={TotalHints}
           />
         )}
       </ImageBackground>
