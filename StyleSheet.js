@@ -37,24 +37,7 @@ export const MenuStyles = StyleSheet.create({
     fontFamily: "sans-serif-light",
   },
 });
-export const GameScreenStyles = StyleSheet.create({
-  NumPadContainer: {
-    alignItems: "center",
-  },
-  NUMS: {
-    borderWidth: .5,
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  ButtonText: {
-    fontSize: 32,
-  },
-  Row: {
-    flexDirection: "row",
-  },
-});
+export const GameScreenStyles = StyleSheet.create({});
 export const EndScreenStyles = StyleSheet.create({
   container: {
     borderWidth: 10,
@@ -88,5 +71,72 @@ export const EndScreenStyles = StyleSheet.create({
     fontSize: 32,
     color: "black",
     fontFamily: "sans-serif-light",
+  },
+});
+export const NumpadStyles = StyleSheet.create({
+  btnContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    width: 350,
+    height: 350,
+    borderRadius: 250,
+    alignItems: "center",
+    borderWidth: 2,
+  },
+  btnContainerMiddle: {
+    height: "100%",
+    justifyContent: "space-evenly",
+    marginHorizontal: "3.5%",
+  },
+  button: (mL, mR) => {
+    return {
+      marginLeft: mL,
+      marginRight: mR,
+      width: 60,
+      height: 60,
+      borderRadius: 30,
+      justifyContent: "center",
+      alignItems: "center",
+      borderWidth: 1,
+    };
+  },
+  ButtonText: {
+    fontSize: 32,
+  },
+});
+export const modalStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  ModalBody: {
+    width: "80%",
+    paddingHorizontal: 50,
+    paddingVertical: 20,
+    elevation: 100,
+    borderRadius: 20,
+    alignItems: "center",
+    backgroundColor: "white",
+    opacity: 0.98,
+    borderWidth: 0.8,
+  },
+  ModalResultText: {
+    fontSize: 16,
+    color: "black",
+    marginBottom: 10,
+  },
+  Okay: {
+    borderRadius: 40,
+    backgroundColor: "green",
+    justifyContent: "center",
+    paddingBottom: 5,
+    width: 50,
+    height: 50,
+  },
+  modalButtonText: {
+    color: "white",
+    textAlign: "center",
+    fontSize: 32,
   },
 });

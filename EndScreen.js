@@ -24,6 +24,7 @@ export const EndScreen = (props) => {
         onPress={() => {
           props.changeEndScreen(false);
           props.setRound(props.Round + 1);
+          props.takeHint(0);
         }}
         activeOpacity={0.5}
         style={EndScreenStyles.touchButton("skyblue")}
@@ -36,6 +37,7 @@ export const EndScreen = (props) => {
           props.setMenuState(true);
           props.setRound(1);
           props.setScore(0);
+          props.takeHint(0);
         }}
         activeOpacity={0.5}
         style={EndScreenStyles.touchButton("crimson")}

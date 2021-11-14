@@ -28,6 +28,8 @@ export default function App() {
             addScore={addScore}
             Score={Score}
             Round={Round}
+            Hints={Hints}
+            takeHint={takeHint}
             changeEndScreen={changeEndScreen}
             setMenuState={ChangeScreen}
           />
@@ -40,6 +42,7 @@ export default function App() {
             changeEndScreen={changeEndScreen}
             setMenuState={ChangeScreen}
             Hints={Hints}
+            takeHint={takeHint}
             Score={Score}
             setScore={setScore}
             Round={Round}
