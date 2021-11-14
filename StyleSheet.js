@@ -10,8 +10,7 @@ export const AppStyles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: "space-evenly",
-        alignItems: "center",
+        justifyContent: "center",
         borderWidth: 2,
         borderColor: 'blue',
     },
@@ -22,12 +21,16 @@ export const AppStyles = StyleSheet.create({
 export const MenuStyles = StyleSheet.create({
     Welcome: {
         fontSize: 48,
-        fontStyle: 'normal',
+        color: 'white',
+        textAlign: 'center',
+        textShadowColor: "skyblue",
+        textShadowRadius: 10,
     },
     touchButton: {
         backgroundColor: "skyblue",
         borderRadius: 40,
         padding: 10,
+        marginHorizontal: '20%',
         alignItems: "center",
     },
     touchButtonstext: {

@@ -12,8 +12,8 @@ import { MainMenu} from './MainScreen';
 
 
 export default function App() {
-  const [Menu, ChangeScreen] = React.useState(false);
-  const [End, changeEndScreen] = React.useState(true);
+  const [Menu, ChangeScreen] = React.useState(true);
+  const [End, changeEndScreen] = React.useState(false);
 
   return (
     <View style={AppStyles.container}>

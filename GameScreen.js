@@ -12,6 +12,14 @@ export const GameScreen = (props) => {
     const [Number, setNumber] = React.useState(Math.floor(Math.random() * 100) + 1);
     console.log(Number);
     const [Score, setScore] = React.useState(0);
+    const addScore = (x,op) =>{
+        if(op){
+            setScore(Score+x)
+        }
+        else{
+            setScore(Score-2)
+        }
+    }
     const [Tries, setTries] = React.useState(5);
     const [Round, setRound] = React.useState(1);
 
